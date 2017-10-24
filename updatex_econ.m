@@ -16,7 +16,7 @@ end
 	
           if CONFORMITY==0
          
-                    agent_max=find_max(rangem, agent, param5);
+                    agent_max=find_max(ii, rangem, agent, param5, F);
               
                     if F.x(bi2de(agent(ii).currentX)+1)+param6*max(F.x)/100<F.x(bi2de(agent_max)+1)
                         agent(ii)=copy_peer(agent(ii), agent_max, param3);
@@ -31,7 +31,7 @@ end
           
           
           else
-              [agent_f, test_f]=find_freq(rangem, agent, param5);
+              [agent_f, test_f]=find_freq(ii, rangem, agent, param5, F);
               if test_f>0
                   if F.x(bi2de(agent(ii).currentX)+1)+param6*max(F.x)/100<F.x(bi2de(agent_f)+1)
                     agent(ii)=copy_peer(agent(ii), agent_f, param3);

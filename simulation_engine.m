@@ -29,8 +29,8 @@ search_s=[];
      
     if STYPE==4 
         
-       filename=strcat('/gpfs/gss1/home/vuculescu/simulation/simulation/', int2str(MWTYPE));
-      %filename=strcat(int2str(MWTYPE));
+      % filename=strcat('/gpfs/gss1/home/vuculescu/simulation/simulation/', int2str(MWTYPE));
+      filename=strcat(int2str(MWTYPE));
         g=load(filename);
         graf=g.ans;
         for i=1:size(agent, 2)
