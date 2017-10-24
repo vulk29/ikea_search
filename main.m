@@ -28,8 +28,8 @@ for jj=1:1000    %   Detailed explanation goes here
     ii=jj; 
     rng(ii,'twister');
     if k==6 
-        filename=strcat('/gpfs/gss1/work/aubssicoabo/vuculescu/6F20', int2str(ii));
-       % filename=strcat('/landscapegen/0 and 6/6F20', int2str(ii)); 
+       % filename=strcat('/gpfs/gss1/work/aubssicoabo/vuculescu/6F20', int2str(ii));
+        filename=strcat('/landscapegen/0 and 6/6F20', int2str(ii)); 
     end
     if k==0 
         filename=strcat('/gpfs/gss1/work/aubssicoabo/vuculescu/0F20', int2str(jj));

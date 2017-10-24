@@ -47,12 +47,8 @@ search_s=[];
              test2=1;
 	     
              for ii=1:agentsnumber  
-               if ECON==0 %agent(ii).econ==0
-                %iti=[iti;  F.x(bi2de(agent(ii).currentX)+1)]; 
-                agent(ii)=updatex(agent(ii).currentX, k, MN, agent, ii, ORGON, STYPE, CTYPE, LSTYPE, FORSIGHT, F, CONFORMITY);
-                else agent(ii)=updatex_econ(agent(ii).currentX, k, MN, agent, ii, ORGON, STYPE, CTYPE, LSTYPE, FORSIGHT, ECON, F, CONFORMITY);
-                end
-                
+                agent(ii)=updatex_econ(agent(ii).currentX, k, MN, agent, ii, ORGON, STYPE, CTYPE, LSTYPE, FORSIGHT, ECON, F, CONFORMITY);
+        
                 agent(ii).iterates=[agent(ii).iterates, F.x(bi2de(agent(ii).currentX)+1)];
                 iti=[iti;  F.x(bi2de(agent(ii).currentX)+1)]; 
                 its=[its; agent(ii).search_s];
@@ -63,8 +59,9 @@ search_s=[];
                     end
                 end
              end
+             
             for ii=1:agentsnumber  
-            agent(ii).formerX=agent(ii).currentX; 
+             agent(ii).formerX=agent(ii).currentX; 
             end
             test=test2;
             it=[it, iti];
