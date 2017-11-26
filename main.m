@@ -9,33 +9,34 @@ function [run] = main()
  Nruns1=100;  
  Nruns2=500;
  MN=20;
- agentsnumber=100;
+ agentsnumber=100;  
  ORGON=1;
  STYPE=4;
- FORSIGHT=3;
+ FORSIGHT=9;
  k=6;
  ECON=10;
  MWTYPE=1:1; 
  CTYPE=2:2; 
  LSTYPE=1:1; 
  shocktime=0;
- CONFORMITY=1;
+ CONFORMITY=0;
+ 
 if MN~=20&&(k~=0||k~=6) fprintf('cool, but please first generate landscape for N=%s and K=%s',num2str(MN), num2str(k));
 return;
 end
-%jj=1:400 
-for jj=1:1000    %   Detailed explanation goes here
+
+parfor jj=1:1000    %   Detailed explanation goes here
     ii=jj; 
     rng(ii,'twister');
     if k==6 
-       % filename=strcat('/gpfs/gss1/work/aubssicoabo/vuculescu/6F20', int2str(ii));
-        filename=strcat('/landscapegen/0 and 6/6F20', int2str(ii)); 
+       filename=strcat('/gpfs/gss1/work/aubssicoabo/vuculescu/6F20', int2str(ii));
+       %filename=strcat('/landscapegen/0 and 6/6F20', int2str(ii)); 
     end
     if k==0 
-        filename=strcat('/gpfs/gss1/work/aubssicoabo/vuculescu/0F20', int2str(jj));
+        filename=strcat('/gpfs/gss1/work/aubssicoabo/vuculescu/0F20', int2str(ii));
     end
     if k==19
-        filename=strcat('/gpfs/gss1/work/aubssicoabo/vuculescu/19F20', int2str(jj));
+        filename=strcat('/gpfs/gss1/work/aubssicoabo/vuculescu/19F20', int2str(ii));
     end
 
     F= load (filename);
@@ -60,10 +61,16 @@ end
 
 
 end
-% 209 is running ikea 5 fot main text last one hundred - didnt run yet
-% 215 is running fully connected best 3 forsight with 5 ikea
-% 216 is running fully connected best 40 forsight with 0 ikea
-% 217 is running fully connected best 40 forsight with 5 ikea
-% 213 is running fully connected k0 with ikea 0
-% 218 is running fully connected k0 with ikea 5 first 300
-% 221 is running random k6 conformity 3 ikea 10
+
+
+% job 7 is running fully connected ikea 0 
+% job 9 is running fully connected ikea 10 
+% job 11 is running lattice ikea 10
+% job 14 is running lattice ikea 0
+%job 17 is running random ikea 0
+%job 18 is running randomi kea 10
+%job 16 is running fully conn ikea 10 500
+% currently running 200 of full con ikea. 
+% rem. 0 lattice ikea next
+%currently running 200 more of full con ikea. 
+% missing conformity 1 vs ikea and non ikea for 41

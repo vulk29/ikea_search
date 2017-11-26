@@ -2,7 +2,7 @@ function[agent_f, test_f]= find_freq(ii, rangem, agent, param5, F)
    peersols=agent(agent(ii).network(rangem(1))).formerX; 
    peersolsf=F.x(bi2de(agent(agent(ii).network(rangem(1))).formerX)+1); 
    
-   for i3=2:param5
+   for i3=2:size(rangem,2)
               peersols=[peersols; agent(agent(ii).network(rangem(i3))).formerX];
               peersolsf=[peersolsf;F.x(bi2de(agent(agent(ii).network(rangem(i3))).formerX)+1)]; 
    end

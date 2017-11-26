@@ -14,14 +14,16 @@ for i=1:size(answer,2)
  
     for j=1:size(answer(i).search_s,1)
     if answer(i).search_s(j)==1 count1s(i)=count1s(i)+1;
+       
     else count2s(i)=count2s(i)+1;
     end
+    maxss(i,j)=max(answer(i).it(j, min(index, end))); 
     end
     
  coun1s(i)=count1s(i)/j;
  coun2s(i)=count2s(i)/j;
 
-rez.m=maxs;
+rez.m(i)=mean(maxss(i,:))/ans(i).max;
 rez.mm(i)=maxs(i)/ans(i).max;
 if maxs(i)==answer(i).max
     rez.times_max(i)=1;
@@ -55,8 +57,8 @@ div(i,j)=size(unique(answer(i).it(:,j)),1);
     end
 end
 end
-
-rez.average=mean(rez.mm);
+%%%%%%%%
+rez.average=mean(rez.m);
 rez.st=std(rez.mm);
 rez.sum=sum(rez.times_max);
 rez.speed=mean(speed);

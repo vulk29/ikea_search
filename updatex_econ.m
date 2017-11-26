@@ -1,7 +1,7 @@
 function [agent0] = updatex_econ(step0, k, N, agent, ii, param, param2, param3, param4, param5, param6, F, CONFORMITY)
 
 if param5==0
-    param5=size(agent, 2)-1;
+    param5=size(agent(ii).network,1);
 end
 %   how many people i look at before i engage in social learning=3
     step1=step0;
@@ -9,7 +9,7 @@ end
     agent(ii).search_s=0;
 
     if size(agent(ii).network, 1)&&param
-        rangem=randperm(size(agent(ii).network,1), param5);
+        rangem=randperm(size(agent(ii).network,1), min(size(agent(ii).network,1), param5));
     end
     
     if size(agent(ii).network, 1)&&param
