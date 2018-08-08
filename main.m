@@ -29,14 +29,14 @@ parfor jj=1:1000    %   Detailed explanation goes here
     ii=jj; 
     rng(ii,'twister');
     if k==6 
-       filename=strcat('/gpfs/gss1/work/aubssicoabo/vuculescu/6F20', int2str(ii));
+       filename=strcat('/gpfs/gss1/work/6F20', int2str(ii));
        %filename=strcat('/landscapegen/0 and 6/6F20', int2str(ii)); 
     end
     if k==0 
-        filename=strcat('/gpfs/gss1/work/aubssicoabo/vuculescu/0F20', int2str(ii));
+        filename=strcat('/gpfs/gss1/work/0F20', int2str(ii));
     end
     if k==19
-        filename=strcat('/gpfs/gss1/work/aubssicoabo/vuculescu/19F20', int2str(ii));
+        filename=strcat('/gpfs/gss1/work/19F20', int2str(ii));
     end
 
     F= load (filename);
@@ -63,14 +63,3 @@ end
 end
 
 
-% job 7 is running fully connected ikea 0 
-% job 9 is running fully connected ikea 10 
-% job 11 is running lattice ikea 10
-% job 14 is running lattice ikea 0
-%job 17 is running random ikea 0
-%job 18 is running randomi kea 10
-%job 16 is running fully conn ikea 10 500
-% currently running 200 of full con ikea. 
-% rem. 0 lattice ikea next
-%currently running 200 more of full con ikea. 
-% missing conformity 1 vs ikea and non ikea for 41
